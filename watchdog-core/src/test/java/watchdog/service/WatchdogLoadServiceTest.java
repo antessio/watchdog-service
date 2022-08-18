@@ -45,7 +45,7 @@ class WatchdogLoadServiceTest extends BaseTest {
                 .thenReturn(randomListOf(5, WatchdogDataEntity.class))
                 .thenReturn(Collections.emptyList());
 
-        when(mockedWatchdogConverter.toBean(any())).thenReturn(randomWatchdog(EventExample.class));
+        when(mockedWatchdogConverter.toBean(any())).thenReturn(randomWatchdog());
         //when
         Stream<WatchDog> result = loadService.getByExternalId(externalId);
         List<WatchDog> resultList = result.collect(Collectors.toList());

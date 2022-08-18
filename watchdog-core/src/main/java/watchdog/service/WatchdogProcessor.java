@@ -4,6 +4,7 @@ import watchdog.service.bean.WatchDog;
 
 class WatchdogProcessor {
 
+
     public WatchDog process(WatchDog watchDog) {
         /*
             - read the watchdog configuration by type

@@ -30,7 +30,7 @@ class WatchdogConverterTest extends BaseTest {
         WatchdogDataEntity entity = randomWathDogDataEntity();
         when(mockedConverterService.convert(any(), any())).thenReturn(random(EventExample.class));
         //when
-        WatchDog<EventExample> result = converter.toBean(entity, EventExample.class);
+        WatchDog result = converter.toBean(entity);
         //then
         verify(mockedConverterService).convert(entity.getEvent(), EventExample.class);
         assertThat(result)
@@ -40,7 +40,7 @@ class WatchdogConverterTest extends BaseTest {
     @Test
     void shouldConvertToDataEntity() {
         //given
-        WatchDog<EventExample> watchDog = randomWatchdog(EventExample.class);
+        WatchDog watchDog = randomWatchdog();
         when(mockedConverterService.convertToMap(any())).thenReturn(new HashMap<>());
         //when
         WatchdogDataEntity result = converter.toEntity(watchDog);

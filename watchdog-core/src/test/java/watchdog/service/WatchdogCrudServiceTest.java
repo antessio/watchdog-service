@@ -34,10 +34,10 @@ class WatchdogCrudServiceTest extends BaseTest {
     @Test
     void shouldInsertNew() {
         //given
-        WatchDog watchDog = randomWatchdog(Map.class);
+        WatchDog watchDog = randomWatchdog();
 
         WatchdogDataEntity expectedEntityToInsert = randomWathDogDataEntity();
-        WatchDog expectedBeanToReturn = randomWatchdog(Map.class);
+        WatchDog expectedBeanToReturn = randomWatchdog();
         WatchdogDataEntity expectedInsertedEntity = randomWathDogDataEntity();
         when(watchDogConverterMock.toEntity(any())).thenReturn(expectedEntityToInsert);
         when(watchDogConverterMock.toBean(any())).thenReturn(expectedBeanToReturn);
@@ -55,7 +55,7 @@ class WatchdogCrudServiceTest extends BaseTest {
     @Test
     void shouldThrowExceptionIfPersistenceException() {
         //given
-        WatchDog watchDog = randomWatchdog(Map.class);
+        WatchDog watchDog = randomWatchdog();
         WatchdogDataEntity expectedEntityToInsert = randomWathDogDataEntity();
         when(watchDogConverterMock.toEntity(any())).thenReturn(expectedEntityToInsert);
         when(watchDogRepositoryMock.insert(any())).thenThrow(new PersistenceException());

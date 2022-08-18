@@ -15,7 +15,7 @@ class WatchdogCrudService {
     private WatchdogRepository watchdogRepository;
     private WatchdogConverter watchdogConverter;
 
-    public WatchdogCrudService(WatchdogRepository watchdogRepository,
+    WatchdogCrudService(WatchdogRepository watchdogRepository,
                                WatchdogConverter watchdogConverter) {
         this.watchdogRepository = watchdogRepository;
         this.watchdogConverter = watchdogConverter;

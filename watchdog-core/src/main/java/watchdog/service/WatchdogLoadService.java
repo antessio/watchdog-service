@@ -12,7 +12,7 @@ class WatchdogLoadService {
     private WatchdogRepository watchdogRepository;
     private WatchdogConverter watchdogConverter;
 
-    public WatchdogLoadService(WatchdogRepository watchdogRepository, WatchdogConverter watchdogConverter) {
+    WatchdogLoadService(WatchdogRepository watchdogRepository, WatchdogConverter watchdogConverter) {
         this.watchdogRepository = watchdogRepository;
         this.watchdogConverter = watchdogConverter;
     }
